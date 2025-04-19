@@ -3,6 +3,10 @@ name = "orders"
 version = "0.1.0"
 edition = "2024"
 
+[features]
+sqlx-check = ["sqlx/any", "sqlx/macros", "sqlx/runtime-tokio-native-tls"]
+
 [dependencies]
-sqlx = { version = "0.8.3", features = ["runtime-tokio"] }
+anyhow = "1.0.98"
+sqlx = { version = "0.8.3", features = ["runtime-tokio", "macros", "postgres" ] }
 tokio = "1.44.2"
